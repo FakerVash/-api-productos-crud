@@ -18,11 +18,16 @@ export const sequelize = new Sequelize({
 
 })
     
-export async function connectDatabase(): Promise<void>{
-    try{
-        await sequelize.authenticate()
-        logger.info('Base de datos conectada')
-    }catch(error){
-        logger.error('Error al conectar a la base de datos ${error}')
-    }
+
+export async function connectDatabase(): Promise<boolean> {
+  try {
+    await sequelize.authenticate();
+    logger.info('Base de datos conectada');
+    return true;
+  } catch (error) {
+    logger.error(`Error al conectar a la base de datos: ${error}`);
+    return false;
+  }
 }
+
+

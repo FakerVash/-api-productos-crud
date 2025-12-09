@@ -1,28 +1,26 @@
-//importar todas funcionalidades de express
-import express ,{Application,Request,Response} from 'express';
-//importar todas funcionalidades de cors
+import express from 'express';
 import cors from 'cors';
-//extraer todas funcionalidades de dotenv para variables globales
-import dotenv from 'dotenv';
-dotenv.config(); 
-const PORT = process.env.PORT;
-const app:Application=express();
+import { connectDatabase } from './config/database.ts';
+import { env } from './config/env.js';
+import productoRoutes from './routes/producto.routes.ts';
+import './models/producto.schemas.js';
 
-//middlwares
-//seguridad
+const app = express();
+
 app.use(cors());
-//traducir las peticiones o respuestas del json
 app.use(express.json());
 
-//rutas
-app.get('/health',(req: Request,res: Response)=>{
-    res.json({
-        status: 'ok',
-        message: 'Servidor funcionando correctamente'
-    })
-})
-app.listen(PORT,()=>{
-    console.log(`Escuchando en el puerto ${PORT}`)
-})
+app.get('/health', (req, res) => {
+  res.json({ status: 'ok' });
+});
 
-export default app;
+app.use('/api/productos', productoRoutes);
+
+async function startServer() {
+  await connectDatabase();
+  app.listen(env.PORT, () => {
+    console.log(` Servidor en http://localhost:${env.PORT}`);
+  });
+}
+
+startServer();
