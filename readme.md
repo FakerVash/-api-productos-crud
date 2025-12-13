@@ -103,15 +103,15 @@ A continuación se presentan capturas que evidencian el correcto funcionamiento 
 
 **GET productos**
 
-![GET productos](fotos/Get api-producto.png)
+![GET productos](fotos/Getapi-producto.png)
 
 **POST producto**
 
-![POST producto](fotos/Post api-producto.png)
+![POST producto](fotos/Postapi-producto.png)
 
 **GET producto por ID**
 
-![GET por ID](fotos/Validaciones yG ET por ID.png)
+![GET por ID](fotos/ValidacionesyGETporID.png)
 
 **PATCH producto**
 
@@ -119,15 +119,15 @@ A continuación se presentan capturas que evidencian el correcto funcionamiento 
 
 **DELETE producto**
 
-![DELETE producto](fotos/Delete id 1.png)
-![DELETE desactivado](fotos/Delete id 1 desactive.png)
+![DELETE producto](fotos/Deleteid1.png)
+![DELETE desactivado](fotos/Deleteid1desactive.png)
 
 ---
 
 ### Validaciones y errores
 
-![Validación producto encontrado](fotos/Validacion por producto encontrado.png)
-![Validación producto no encontrado](fotos/validacion producto id no encontrado.png)
+![Validación producto encontrado](fotos/Validacionporproductoencontrado.png)
+![Validación producto no encontrado](fotos/validacionproductoidnoencontrado.png)
 
 ---
 
