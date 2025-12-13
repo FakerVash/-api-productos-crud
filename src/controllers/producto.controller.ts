@@ -84,3 +84,52 @@ export const obtenerProducto = async (req: Request, res: Response) => {
     res.status(500).json({ error: error.message });
   }
 };
+export const actualizarProducto = async (req: Request, res: Response) => {
+  try {
+    const id = parseInt(req.params.id);
+
+    if (isNaN(id)) {
+      return res.status(400).json({ error: 'ID inválido' });
+    }
+
+    const producto = await ProductoModel.findByPk(id);
+
+    if (!producto) {
+      return res.status(404).json({ error: 'Producto no encontrado' });
+    }
+
+    await producto.update(req.body);
+
+    res.json({
+      id: producto.id,
+      nombre: producto.nombre,
+      precio: Number(producto.precio),
+      stock: producto.stock,
+      activo: producto.activo
+    });
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
+export const eliminarProducto = async (req: Request, res: Response) => {
+  try {
+    const id = parseInt(req.params.id);
+
+    if (isNaN(id)) {
+      return res.status(400).json({ error: 'ID inválido' });
+    }
+
+    const producto = await ProductoModel.findByPk(id);
+
+    if (!producto) {
+      return res.status(404).json({ error: 'Producto no encontrado' });
+    }
+
+    await producto.update({ activo: false });
+
+    res.status(204).send();
+  } catch (error: any) {
+    res.status(500).json({ error: error.message });
+  }
+};
