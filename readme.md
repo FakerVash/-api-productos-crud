@@ -84,10 +84,16 @@ La API maneja los siguientes casos:
 ## Evidencia de pruebas unitarias / pruebas de endpoints
 
 A continuación se presentan capturas que evidencian el correcto funcionamiento de la API durante las pruebas realizadas con un cliente REST.
+### Servidor y conexión
+
+![Base creada](fotos/ValidacionesyGETporID.png)
 
 ### Servidor y conexión
 
 ![Servidor funcionando](fotos/Serverfuncionando.png)
+
+### Conexión
+
 ![Conexión a la base de datos](fotos/Conexiondataabse.png)
 
 ---
@@ -109,10 +115,6 @@ A continuación se presentan capturas que evidencian el correcto funcionamiento 
 
 ![POST producto](fotos/Postapi-producto.png)
 
-**GET producto por ID**
-
-![GET por ID](fotos/ValidacionesyGETporID.png)
-
 **PATCH producto**
 
 ![PATCH producto](fotos/PATCH.png)
@@ -120,13 +122,17 @@ A continuación se presentan capturas que evidencian el correcto funcionamiento 
 **DELETE producto**
 
 ![DELETE producto](fotos/Deleteid1.png)
+
+**DELETE producto desactivado**
+
 ![DELETE desactivado](fotos/Deleteid1desactive.png)
 
 ---
 
-### Validaciones y errores
-
+### Validaciones:
 ![Validación producto encontrado](fotos/Validacionporproductoencontrado.png)
+
+### Errores:
 ![Validación producto no encontrado](fotos/validacionproductoidnoencontrado.png)
 
 ---
